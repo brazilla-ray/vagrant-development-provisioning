@@ -1,3 +1,4 @@
 ansible_ssh_host: 127.0.0.1
 ansible_ssh_user: vagrant
 postgres_db_user: vagrant
+mysql_db_user: vagrant
