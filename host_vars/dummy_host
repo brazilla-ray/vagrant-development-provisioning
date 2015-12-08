@@ -1,0 +1,5 @@
+ansible_ssh_port: HOST_PORT
+ansible_ssh_private_key_file: /PATH/TO/VAGRANT_PROJECT_DIR/.vagrant/machines/MACHINE_NAME/virtualbox/private_key
+hostname: HOSTNAME
+fqdn: FQDN
+domain: DOMAIN_NAME
