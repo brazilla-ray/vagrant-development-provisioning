@@ -17,7 +17,6 @@
     - git
     - curl
     - wget
-    - tree
 
 # Hostname settings
 
