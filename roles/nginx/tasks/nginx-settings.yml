@@ -1,0 +1,14 @@
+---
+# This playbook covers the general configuration of NGINX.
+# A lot of it is based on ANXS.
+
+- name: create nginx.conf
+  copy:
+    backup: yes
+    src: "nginx.conf"
+    dest: /etc/nginx/nginx.conf
+    owner: "{{ root_user }}"
+    group: "{{ root_group }}"
+    mode: 0644
+  notify:
+    - restart nginx

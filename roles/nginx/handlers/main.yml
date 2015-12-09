@@ -1,0 +1,22 @@
+---
+# set nginx policy to enforce
+- name: enforce nginx
+  command: aa-enforce nginx
+  become: yes
+
+# apparmor reload
+- name: reload nginx apparmor
+  command: apparmor_parser -r /etc/apparmor.d/usr.sbin.nginx
+  become: yes
+
+# Restart NGINX
+- name: restart nginx
+  service:
+    name: nginx
+    state: restarted
+
+# Reload NGINX
+- name: reload nginx
+  service:
+    name: nginx
+    state: reloaded

@@ -1,0 +1,23 @@
+---
+
+- include: apt.yml
+
+- name: PostgreSQL user
+  postgresql_user:
+    name: "{{ postgres_db_user }}"
+    password: secret
+    role_attr_flags: CREATEDB,NOSUPERUSER
+    port: 5432
+    state: present
+    login_user:  "{{ postgres_admin_user }}"
+  become: yes
+  become_user:  "{{ postgres_admin_user }}"
+
+- name: PostgreSQL user database
+  postgresql_db:
+    name: "{{ postgres_db_user }}"
+    owner: "{{ postgres_db_user }}"
+    state: present
+    login_user:  "{{ postgres_admin_user }}"
+  become: yes
+  become_user:  "{{ postgres_admin_user }}"

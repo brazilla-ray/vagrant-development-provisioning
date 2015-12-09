@@ -1,0 +1,19 @@
+server {
+  listen 80;
+  server_name {{ domain }};
+
+  keepalive_timeout 300;
+
+  client_max_body_size 4G;
+
+  root {{ document_root }};
+
+  try_files $uri/index.html $uri.html $uri;
+
+  # You can override error pages by redirecting the requests to a file in your
+  # application's public folder, if you so desire:
+  error_page 500 502 503 504 /500.html;
+  location = /500.html {
+          root {{ document_root }};
+  }
+}

@@ -1,9 +1,8 @@
 ---
 # This file sets the global variables available to all roles
-# System settings
 
 # User variables
-# Root user
+### Root user
 
 root_user: ROOT_USER # Probably 'root'.
 root_uid: ROOT_UID # Probably '0'.
@@ -11,7 +10,7 @@ root_group: ROOT_GROUP # Probably 'root'.
 root_gid: ROOT_GID # Probably '0'.
 root_password: ROOT_PASSWORD
 
-# The main, non-root user
+### The main, non-root user
 
 admin_user: ADMIN_USER
 admin_uid: ADMIN_UID
@@ -21,9 +20,14 @@ admin_home: ADMIN_HOME
 admin_password: ADMIN_PASSWORD
 
 # Database users
-# Postgres(app)
+### PostgreSQL
+
 postgres_admin_user: POSTGRES_ADMIN_USER
 
-# Mysql
+### MySQL
+
 mysql_admin_user: MYSQL_ADMIN_USER
 mysql_admin_pass: MYSQL_ADMIN_PASS
+
+# NGINX variables
+document_root: DOCUMENT_ROOT

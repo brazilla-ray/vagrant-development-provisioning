@@ -19,7 +19,7 @@ Vagrant provides a default key to allow SSH connections to the machine. This is 
 The hostname should match the name set in Ansible's inventory file.  
 
 `fqdn`
-Optional. Sets the FQDN of the Vagrant machine.  
+Sets the FQDN of the Vagrant machine.  
 
 `domain`
-Optional. Sets the domain name of the Vagrant machine.
+Sets the domain name of the Vagrant machine.
