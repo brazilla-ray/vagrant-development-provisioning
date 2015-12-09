@@ -21,7 +21,7 @@ admin_home: ADMIN_HOME
 admin_password: ADMIN_PASSWORD
 
 # Database users
-# Postgres(app)
+# Postgres
 postgres_admin_user: POSTGRES_ADMIN_USER
 
 # Mysql
