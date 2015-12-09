@@ -7,6 +7,14 @@ Provisioning Vagrant machines via Ansible for local development.
 
 * * *
 
+##### Vagrantfile
+
+You can of course provision a Vagrant machine using Vagrant's built in Ansible provisioner, which, depending on your needs, may be preferable. The goal here, however, is to mimic as much as possible the provisioning of a remote server or servers. Ansible will be doing its provisioning over SSH, just as it would a remote server.
+
+The `Vagrantfile` provided here is an example, you should change it to suit your needs. There are three machines defined in this example, you can change that to however many or few you need. Just add or delete config blocks as you see fit. The machine names can be whatever you like. The IP address can be something different, but should be unique for each machine. The host port in the `forwarded port` line can change as well, so long as each is unique.
+
+For more on Vagrant multi-machine setups, consult the [Vagrant docs](https://docs.vagrantup.com/v2/multi-machine/index.html).
+
 ##### Inventory
 
 Ansible needs an inventory file; you should create one before anything else. Consult the [Ansible docs](http://docs.ansible.com/ansible/intro_inventory.html) for more on that. It can be named anything you like; 'dev' or something similar is fine.
