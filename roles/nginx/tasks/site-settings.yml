@@ -1,0 +1,28 @@
+---
+
+- name: create site
+  template:
+    src: "nginx_app_{{ hostname }}.j2" # This uses the hostname variable as the file name.
+    dest: "/etc/nginx/sites-available/{{ hostname }}"
+    owner: "{{ root_uid }}"
+    group: "{{ root_gid }}"
+    mode: 0644
+
+# Link sites-available to sites-enabled.
+
+- name: create symlink to sites-enabled
+  file:
+    src: "/etc/nginx/sites-available/{{ hostname }}"
+    dest: "/etc/nginx/sites-enabled/{{ hostname }}"
+    state: link
+  notify:
+    - reload nginx
+
+# Remove symlink to default
+
+- name: remove symlink to sites-available/default
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  notify:
+    - reload nginx
