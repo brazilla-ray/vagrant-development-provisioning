@@ -1,0 +1,14 @@
+---
+# This is the master playbook.
+
+- name: configuration common to all hosts
+  hosts: all
+  become: yes
+
+  roles:
+    - common
+    - databases
+    - nginx
+
+  vars_files:
+    - vars/main.yml
