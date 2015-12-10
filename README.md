@@ -3,13 +3,24 @@ Provisioning Vagrant machines via Ansible for local development.
 
 * * *
 
+### Overview
+
+* * *
+
+The goal of this project is to provide a simple way to create local development environments using Ansible to provision a group of Vagrant machines.
+
+It aims to mimic as much as possible the provisioning of a remote server or servers using Ansible. To that end, it does not make use of Vagrant's built-in Ansible provisioner. While that may be simpler and, depending on your needs, preferable, this approach does allow you to take full advantage of Ansible's inventory tools, such as grouping hosts and setting variables for them. 
+
+Using this approach, you could have a Vagrant machine for Rails development, one for Drupal, and so on, all provisioned from a single master playbook, with tasks assigned to each machine as needed.
+
+This project is not meant to create any specific *type* of development environment. The machines will be configured only in the most basic way. It will install nginx for example, but only configure it to serve a simple static page. Each Ansible role is made to be as modular as possible, allowing you to add or remove things as needed.
+
 ### Usage
 
 * * *
 
 ##### Vagrantfile
 
-You can of course provision a Vagrant machine using Vagrant's built in Ansible provisioner, which, depending on your needs, may be preferable. The goal here, however, is to mimic as much as possible the provisioning of a remote server or servers. Ansible will be doing its provisioning over SSH, just as it would a remote server.
 
 The `Vagrantfile` provided here is an example, you should change it to suit your needs. There are three machines defined in this example, you can change that to however many or few you need. Just add or delete config blocks as you see fit. The machine names can be whatever you like. The IP address can be something different, but should be unique for each machine. The host port in the `forwarded port` line can change as well, so long as each is unique.
 
