@@ -1,0 +1,10 @@
+---
+# SQLite
+
+- name: install sqlite3
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - sqlite3
+    - libsqlite3-dev

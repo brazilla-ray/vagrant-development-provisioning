@@ -1,28 +1,4 @@
 ---
-# Install the big 3 databases
-
-# SQLite
-
-- name: install sqlite3
-  apt:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - sqlite3
-    - libsqlite3-dev
-
-# PostgreSQL
-
-- name: install postgresql
-  apt:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - postgresql
-    - postgresql-contrib
-    - libpq-dev
-    - python-psycopg2
-
 # MySQL
 
 - name: preseed debconf database with ROOT PASSWORD
