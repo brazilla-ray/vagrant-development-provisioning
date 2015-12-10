@@ -1,6 +1,5 @@
 ---
-# This playbook covers the general configuration of NGINX.
-# A lot of it is based on ANXS.
+# General configuration of NGINX.
 
 - name: create nginx.conf
   copy:

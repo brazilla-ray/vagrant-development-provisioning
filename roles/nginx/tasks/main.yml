@@ -1,14 +1,7 @@
 ---
-# This playbook installs and configures NGINX.
-
-# Install packages.
 
 - include: apt.yml
 
-# General NGINX settings.
-
 - include: nginx-settings.yml
-
-# Site-specific NGINX settings.
 
 - include: site-settings.yml
