@@ -39,3 +39,8 @@ In this case, there are four defined; `ansible_ssh_host`, `ansible_ssh_user`, `p
 In the `host_vars` directory, there should a file for each of your hosts, i.e., your Vagrant machines. The name of the file should match the name of the host, which should probably be the name of the Vagrant machine for clarity's sake.
 
 The variables to set are `ansible_ssh_port`, `ansible_ssh_private_key_file`, `hostname`, `fqdn`, and `domain`. For more on those, consult the [README](host_vars/README.md) in the `host_vars` directory.
+
+##### Roles
+
+The `site.yml` file is the master playbook that will control how the machines are provisioned. It begins with a group of roles that will define a basic state for each machine, including databases and a webserver (NGINX). These roles all reference variables contained in `vars/main.yml`, as well as variables in `host_vars`.
+
