@@ -1,54 +1,7 @@
 ---
-# Common apt tasks
 
-- name: apt-get upgrade
-  apt: upgrade=yes
+- include: apt.yml
 
-# Install the following packages.
+- include: hostname.yml
 
-- name: install basic packages
-  apt:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - debconf-utils
-    - build-essential
-    - checkinstall
-    - git
-    - curl
-    - wget
-
-# Hostname settings
-
-- name: set hostname in /etc/hostname
-  hostname:
-    name: "{{ hostname }}"
-
-- name: set IPv4 hostname in /etc/hosts
-  lineinfile:
-    dest: /etc/hosts
-    regexp: "^127.0.0.1"
-    line: "127.0.0.1{{'\t'}}{{ fqdn }}{{'\t'}}{{ hostname }}{{'\t'}}localhost"
-    state: present
-
-- name: set IPv6 hostname in /etc/hosts
-  lineinfile:
-    dest: /etc/hosts
-    regexp: "^::1"
-    line: "::1{{'\t\t'}}{{ fqdn }}{{'\t'}}{{ hostname }}{{'\t'}}localhost ip6-localhost ip6-loopback"
-    state: present
-
-# Firewall settings
-
-- name: create firewall rules
-  copy:
-    src: iptables.firewall.rules
-    dest: /etc/iptables.firewall.rules
-    owner: "{{ root_uid }}"
-    group: "{{ root_gid }}"
-    mode: 0644
-
-- name: load firewall rules
-  shell: >
-    iptables-restore < /etc/iptables.firewall.rules
-  become: yes
+- include: firewall.yml

@@ -1,0 +1,14 @@
+# Firewall settings
+
+- name: create firewall rules
+  copy:
+    src: iptables.firewall.rules
+    dest: /etc/iptables.firewall.rules
+    owner: "{{ root_uid }}"
+    group: "{{ root_gid }}"
+    mode: 0644
+
+- name: load firewall rules
+  shell: >
+    iptables-restore < /etc/iptables.firewall.rules
+  become: yes

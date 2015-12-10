@@ -1,0 +1,20 @@
+---
+# Hostname settings
+
+- name: set hostname in /etc/hostname
+  hostname:
+    name: "{{ hostname }}"
+
+- name: set IPv4 hostname in /etc/hosts
+  lineinfile:
+    dest: /etc/hosts
+    regexp: "^127.0.0.1"
+    line: "127.0.0.1{{'\t'}}{{ fqdn }}{{'\t'}}{{ hostname }}{{'\t'}}localhost"
+    state: present
+
+- name: set IPv6 hostname in /etc/hosts
+  lineinfile:
+    dest: /etc/hosts
+    regexp: "^::1"
+    line: "::1{{'\t\t'}}{{ fqdn }}{{'\t'}}{{ hostname }}{{'\t'}}localhost ip6-localhost ip6-loopback"
+    state: present
