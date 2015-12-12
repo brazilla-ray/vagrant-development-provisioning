@@ -1,0 +1,7 @@
+---
+
+- include: apt.yml
+
+- include: hostname.yml
+
+- include: firewall.yml

@@ -1,0 +1,7 @@
+---
+
+- include: apt.yml
+
+- include: nginx-settings.yml
+
+- include: site-settings.yml

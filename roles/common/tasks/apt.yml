@@ -1,0 +1,19 @@
+---
+# Common apt tasks
+- name: apt-get update
+  apt: update_cache=yes
+
+- name: apt-get upgrade
+  apt: upgrade=yes
+
+- name: install basic packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - debconf-utils
+    - build-essential
+    - checkinstall
+    - git
+    - curl
+    - wget

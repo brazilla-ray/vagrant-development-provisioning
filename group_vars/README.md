@@ -13,10 +13,10 @@ That way, you can set some common variables here, without having to repeat them 
 This should be 127.0.0.1, but maybe there's some case where another address would be better.  
     
 `ansible_ssh_user`
-Probably this should be 'vagrant', as that is Vagrant's default, but it could be something else if you have Vagrant set up that way.  
+This is set to 'vagrant', as that is Vagrant's default, but it could be something else if you have Vagrant set up that way.  
 
 `postgres_db_user`
-If you want to set up Postgresql with the same user for all the machines in the [vagrant] group, set it here. For example, it could be set to 'vagrant' here, and all the machines would have the default Vagrant user as a database user. Otherwise, remove or comment this out, and set it elsewhere.  
+If you want to set up Postgresql database with the same user for all the machines in the [vagrant] group, set it here. By default, it is set to 'vagrant' here. All the machines will have the default Vagrant user as a database user. Otherwise, remove or comment this out, and set it elsewhere.  
 
 `mysql_db_user`
 Same as above.

@@ -1,0 +1,26 @@
+---
+# MySQL
+
+- name: preseed debconf database with ROOT PASSWORD
+  shell: >
+    echo mysql-server-5.5  mysql-server/root_password password "{{ mysql_admin_pass }}" | debconf-set-selections
+
+- name: preseed debconf database with ROOT PASSWORD CONFIRMATION
+  shell: >
+    echo mysql-server-5.5  mysql-server/root_password_again  password "{{ mysql_admin_pass }}" | debconf-set-selections
+
+- name: install mysql-server
+  apt:
+    name: mysql-server
+    state: present
+  environment:
+    DEBIAN_FRONTEND: noninteractive
+
+- name: install other mysql packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - python-mysqldb # This is needed to use ansible's mysql module
+    - mysql-client
+    - libmysqlclient-dev

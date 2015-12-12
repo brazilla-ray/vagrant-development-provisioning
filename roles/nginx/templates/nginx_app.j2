@@ -1,0 +1,12 @@
+server {
+  listen 80;
+  server_name {{ domain }};
+
+  keepalive_timeout 300;
+
+  client_max_body_size 4G;
+
+  root {{ document_root }};
+
+  try_files $uri/index.html $uri.html $uri;
+}

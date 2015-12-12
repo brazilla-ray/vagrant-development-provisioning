@@ -1,0 +1,9 @@
+---
+# Install all required packages.
+
+- name: Install NGINX
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - nginx
