@@ -7,8 +7,8 @@
 
   roles:
     - common
-    - databases
-    - nginx
+    - { role: databases, tags: [ 'databases' ] }
+    - { role: nginx, tags: [ 'nginx' ] }
 
   vars_files:
     - vars/main.yml
