@@ -4,25 +4,26 @@
 # User variables
 ### Root user
 
-root_user: ROOT_USER # Probably 'root'.
-root_uid: ROOT_UID # Probably '0'.
-root_group: ROOT_GROUP # Probably 'root'.
-root_gid: ROOT_GID # Probably '0'.
+root_user: root # Probably 'root'.
+root_uid: 0 # Probably '0'.
+root_group: root # Probably 'root'.
+root_gid: 0 # Probably '0'.
 root_password: ROOT_PASSWORD
 
 ### The main, non-root user
+##### 'vagrant' by default.
 
-admin_user: ADMIN_USER
-admin_uid: ADMIN_UID
-admin_group: ADMIN_GROUP
-admin_gid: ADMIN_GID
-admin_home: ADMIN_HOME
-admin_password: ADMIN_PASSWORD
+admin_user: vagrant
+admin_uid: 1000
+admin_group: vagrant
+admin_gid: 1000
+admin_home: /home/vagrant
+admin_password: ADMIN_PASSWORD # Unused, but if you set another default user, set this to set that user's password.
 
 # Database users
 ### PostgreSQL
 
-postgres_admin_user: POSTGRES_ADMIN_USER
+postgres_admin_user: postgres
 
 ### MySQL
 
@@ -30,4 +31,4 @@ mysql_admin_user: MYSQL_ADMIN_USER
 mysql_admin_pass: MYSQL_ADMIN_PASS
 
 # NGINX variables
-document_root: DOCUMENT_ROOT
+document_root: /srv/www # This location can be changed.
