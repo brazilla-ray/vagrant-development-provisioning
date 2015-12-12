@@ -1,8 +1,24 @@
 ---
 
+- name: create app directory
+  file:
+    path: "{{ document_root }}"
+    owner: "{{ admin_user }}"
+    group: "{{ admin_group }}"
+    mode: 0755
+    state: directory
+
+- name: copy default index.html
+  copy:
+    src: index.html
+    dest: "{{ document_root }}"
+    owner: "{{ admin_user }}"
+    group: "{{ admin_group }}"
+    mode: 0755
+
 - name: create site
   template:
-    src: "nginx_app_{{ hostname }}.j2" # This uses the hostname variable as the file name.
+    src: "nginx_app.j2" # This could use the hostname variable to append the file name to allow for different setups.
     dest: "/etc/nginx/sites-available/{{ hostname }}"
     owner: "{{ root_uid }}"
     group: "{{ root_gid }}"
