@@ -13,12 +13,12 @@ root_password: ROOT_PASSWORD
 ### The main, non-root user
 ##### 'vagrant' by default.
 
-admin_user: vagrant
-admin_uid: 1000
-admin_group: vagrant
-admin_gid: 1000
-admin_home: /home/vagrant
-admin_password: ADMIN_PASSWORD # Unused, but if you set another default user, set this to set that user's password.
+admin_user: deploy
+admin_uid: 1001
+admin_group: deploy
+admin_gid: 1001
+admin_home: /home/deploy
+admin_password: deploy
 
 # Database users
 ### PostgreSQL
