@@ -7,7 +7,7 @@
 
 - name: Create admin user
   user:
-    name: "{{ admin }}"
+    name: "{{ admin_user }}"
     uid: "{{ admin_uid }}"
     groups: "{{ admin_group }},sudo,dialout"
     home: "{{ admin_home }}"
