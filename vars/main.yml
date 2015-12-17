@@ -8,7 +8,7 @@ root_user: root # Probably 'root'.
 root_uid: 0 # Probably '0'.
 root_group: root # Probably 'root'.
 root_gid: 0 # Probably '0'.
-root_password: ROOT_PASSWORD
+root_password: $kjjsLcp1pciV8zRlpi0B0tjoWSHLXgO2WEgM3JepLaDox5XKzINJ0YNdbBqTsK1Po/rxxmfbv1MCoP6PKY5hz0 # 'root'
 
 ### The main, non-root user
 ##### 'vagrant' by default.
@@ -16,9 +16,10 @@ root_password: ROOT_PASSWORD
 admin_user: vagrant
 admin_uid: 1000
 admin_group: vagrant
+other_groups: ["sudo", "dialout", "www-data"]
 admin_gid: 1000
 admin_home: /home/vagrant
-admin_password: ADMIN_PASSWORD # Unused, but if you set another default user, set this to set that user's password.
+admin_password: $6$rounds=100000$7lfeGgtYabzD0kSB$Vi4Mmxz8mlIYAYdueiTh0Rr3L1T7LjMMCsrHKhBYERyoZato1A6KlL14hXpGsZgjFgpNoxuUFBFwqn8Wlwbmw1 # 'vagrant'
 
 # Database users
 ### PostgreSQL
@@ -27,7 +28,6 @@ postgres_admin_user: postgres
 
 ### MySQL
 
-mysql_admin_user: MYSQL_ADMIN_USER
 mysql_admin_pass: MYSQL_ADMIN_PASS
 
 # NGINX variables
