@@ -28,7 +28,6 @@ postgres_admin_user: postgres
 
 ### MySQL
 
-mysql_admin_user: MYSQL_ADMIN_USER
 mysql_admin_pass: MYSQL_ADMIN_PASS
 
 # NGINX variables
