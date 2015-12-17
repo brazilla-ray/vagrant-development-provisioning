@@ -16,6 +16,7 @@ root_password: $kjjsLcp1pciV8zRlpi0B0tjoWSHLXgO2WEgM3JepLaDox5XKzINJ0YNdbBqTsK1P
 admin_user: vagrant
 admin_uid: 1000
 admin_group: vagrant
+other_groups: ["sudo", "dialout", "www-data"]
 admin_gid: 1000
 admin_home: /home/vagrant
 admin_password: $6$rounds=100000$7lfeGgtYabzD0kSB$Vi4Mmxz8mlIYAYdueiTh0Rr3L1T7LjMMCsrHKhBYERyoZato1A6KlL14hXpGsZgjFgpNoxuUFBFwqn8Wlwbmw1 # 'vagrant'

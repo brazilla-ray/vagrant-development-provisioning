@@ -9,7 +9,7 @@
   user:
     name: "{{ admin_user }}"
     uid: "{{ admin_uid }}"
-    groups: "{{ admin_group }},sudo,dialout"
+    groups: "{{ other_groups | join(',') }}"
     home: "{{ admin_home }}"
     createhome: yes
     shell: /bin/bash
