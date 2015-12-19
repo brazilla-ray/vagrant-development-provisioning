@@ -1,0 +1,17 @@
+---
+- name: Create admin group
+  group:
+    name: "{{ admin_group }}"
+    gid: "{{ admin_gid }}"
+    state: present
+
+- name: Create admin user
+  user:
+    name: "{{ admin_user }}"
+    uid: "{{ admin_uid }}"
+    groups: "{{ other_groups | join(',') }}"
+    home: "{{ admin_home }}"
+    createhome: yes
+    shell: /bin/bash
+    password: "{{ admin_password }}"
+    state: present

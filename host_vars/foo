@@ -1,5 +1,5 @@
-ansible_ssh_port: HOST_PORT
-ansible_ssh_private_key_file: /PATH/TO/VAGRANT_PROJECT_DIR/.vagrant/machines/MACHINE_NAME/virtualbox/private_key
-hostname: HOSTNAME
-fqdn: FQDN
-domain: DOMAIN_NAME
+ansible_ssh_port: # The forwarded port from 'Vagrantfile'
+ansible_ssh_private_key_file: # Get this by running "vagrant ssh-config | grep 'IdentityFile'". If you have more than one machine defined in your Vagrantfile, you'll need to specify it like so: 'vagrant ssh-config MACHINE'.
+hostname: # Set this to whatever you like, but the Vagrant machine name is a good choice
+fqdn: # Same as above.
+domain: # Same as above.

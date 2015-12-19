@@ -1,5 +1,10 @@
 ---
 
+- name: stat app directory
+  stat:
+    path: "{{ document_root }}"
+  register: dr
+
 - name: create app directory
   file:
     path: "{{ document_root }}"
@@ -7,14 +12,13 @@
     group: "{{ admin_group }}"
     mode: 0755
     state: directory
+  when: dr.stat.exists == false # All of this with stat is necessary for using Vagrant's synced folders. If we didn't do this, chown would fail.
 
 - name: copy default index.html
   copy:
     src: index.html
     dest: "{{ document_root }}"
-    owner: "{{ admin_user }}"
-    group: "{{ admin_group }}"
-    mode: 0755
+  become_user: "{{ admin_user }}"
 
 - name: create site
   template:

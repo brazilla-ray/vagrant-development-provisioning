@@ -1,4 +1,4 @@
 ansible_ssh_host: 127.0.0.1
-ansible_ssh_user: vagrant
-postgres_db_user: vagrant
-mysql_db_user: vagrant
+ansible_ssh_user: # Probably 'vagrant', unless Vagrant is set up with a different SSH user.
+postgres_db_user: # Probably 'vagrant' if you aren't setting up a seperate user.
+mysql_db_user: # Probably 'vagrant' if you aren't setting up a seperate user.
