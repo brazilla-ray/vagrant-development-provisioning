@@ -4,31 +4,31 @@
 # User variables
 ### Root user
 
-root_user: root # Probably 'root'.
-root_uid: 0 # Probably '0'.
-root_group: root # Probably 'root'.
-root_gid: 0 # Probably '0'.
-root_password: $kjjsLcp1pciV8zRlpi0B0tjoWSHLXgO2WEgM3JepLaDox5XKzINJ0YNdbBqTsK1Po/rxxmfbv1MCoP6PKY5hz0 # 'root'
+root_user: # Probably 'root'.
+root_uid: # Probably '0'.
+root_group: # Probably 'root'.
+root_gid: # Probably '0'.
+root_password: # Ansible's user module requires the password to be encrypted - see the Ansible documentation for more.
 
 ### The main, non-root user
 ##### 'vagrant' by default.
 
-admin_user: vagrant
-admin_uid: 1000
-admin_group: vagrant
-other_groups: ["sudo", "dialout", "www-data"]
-admin_gid: 1000
-admin_home: /home/vagrant
-admin_password: $6$rounds=100000$7lfeGgtYabzD0kSB$Vi4Mmxz8mlIYAYdueiTh0Rr3L1T7LjMMCsrHKhBYERyoZato1A6KlL14hXpGsZgjFgpNoxuUFBFwqn8Wlwbmw1 # 'vagrant'
+admin_user: # Probably 'vagrant'
+admin_uid: # If creating a user other than 'vagrant', this cannot be '1000'
+admin_group: # Probably 'vagrant'
+other_groups: ["sudo", "dialout", "www-data"] # Set any other groups the admin user (including 'vagrant') should belong to. Some possibilities: "sudo", "dialout" (if you're using NFS synced folders), "www-data".
+admin_gid: # See admin_id above
+admin_home: # Probably '/home/vagrant' or something similar
+admin_password: # Ansible's user module requires the password to be encrypted - see the Ansible documentation for more.
 
 # Database users
 ### PostgreSQL
 
-postgres_admin_user: postgres
+postgres_admin_user: # 'postgres' is a good default
 
 ### MySQL
 
-mysql_admin_pass: MYSQL_ADMIN_PASS
+mysql_admin_pass: # Not an encryted password
 
 # NGINX variables
-document_root: /srv/www # This location can be changed.
+document_root: # Where NGINX will serve files from.
